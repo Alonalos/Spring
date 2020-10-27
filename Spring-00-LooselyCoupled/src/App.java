@@ -1,5 +1,5 @@
-import service.FullTimeMentor;
-import service.MentorAccount;
+import services.FullTimeMentor;
+import services.MentorAccount;
 
 public class App {
     public static void main(String[] args) {
