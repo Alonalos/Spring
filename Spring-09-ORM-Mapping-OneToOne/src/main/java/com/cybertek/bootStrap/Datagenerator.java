@@ -1,4 +1,4 @@
-package com.cybertek.bootstrap;
+package com.cybertek.bootStrap;
 
 import com.cybertek.entity.Department;
 import com.cybertek.entity.Employee;
