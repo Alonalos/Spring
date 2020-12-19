@@ -1,4 +1,4 @@
-package com.cinemaapp.entity;
+package com.cybertek.entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
