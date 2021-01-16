@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Java  implements Course {
+public class Java implements Course {
 
     @Value("${instructor}")
     public String InstructorName;
@@ -21,6 +21,6 @@ public class Java  implements Course {
 
     @Override
     public int getTeachingHours() {
-        return 20+ extraSession.getHours();
+        return 20 + extraSession.getHours();
     }
 }

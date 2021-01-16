@@ -20,12 +20,8 @@ public class Person {
     private String firstName;
     private String lastName;
 
-    @OneToMany(mappedBy = "person") //for case1 add cascade = CascadeType.ALL
+    @OneToMany(mappedBy = "person")
     private List<Address> addresses;
-// case1
-//    @OneToMany(cascade = CascadeType.ALL)
-//    @JoinColumn(name="person_id")
-//    private List<Address> addresses;
 
     public Person(String firstName, String lastName) {
         this.firstName = firstName;

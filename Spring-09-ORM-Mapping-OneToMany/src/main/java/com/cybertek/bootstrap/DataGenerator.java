@@ -26,11 +26,6 @@ public class DataGenerator implements CommandLineRunner {
         Address a1=new Address("King St","22456");
         Address a2=new Address("M St","22450");
         Address a3=new Address("U St","00098");
-
-//       p1.setAddresses(Arrays.asList(a1,a2)); ->case1
-//       personRepository.save(p1);->case1
-
-
         personRepository.save(p1);
         a1.setPerson(p1);
         a2.setPerson(p1);

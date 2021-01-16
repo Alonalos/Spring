@@ -27,6 +27,17 @@ public class Employee extends BaseEntity {
 
     private int salary;
 
+   @OneToOne(cascade=CascadeType.ALL)
+   @JoinColumn(name="departent_id")
+   private Department department;
+
+    @OneToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name="region_id")
+    private Region region;
+
+
+
+
 
 
     public Employee(String firstName, String lastName, String email, LocalDate hireDate, Gender gender, int salary) {
@@ -37,4 +48,6 @@ public class Employee extends BaseEntity {
         this.gender = gender;
         this.salary = salary;
     }
+
+
 }

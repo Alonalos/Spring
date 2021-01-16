@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/student")
 public class StudentController {
     @RequestMapping("/show")
-    public String showForm(){
+    public String showForm() {
         return "home";
     }
 }

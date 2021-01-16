@@ -12,9 +12,9 @@ import java.util.Optional;
 @Component
 public class CarpetVA implements Carpet {
 
-    private static final Map<City,BigDecimal> sqPriceForCity= new HashMap<>();
+    private static final Map<City, BigDecimal> sqPriceForCity = new HashMap<>();
 
-    static{
+    static {
         sqPriceForCity.put(City.MCLEAN, new BigDecimal("4.32"));
         sqPriceForCity.put(City.ARLINGTON, new BigDecimal("2.92"));
         sqPriceForCity.put(City.FAIRFAX, new BigDecimal("4.65"));
@@ -22,11 +22,11 @@ public class CarpetVA implements Carpet {
 
     @Override
     public BigDecimal getSqFtPrice(City city) {
-        BigDecimal defaultValue=BigDecimal.ZERO;
-        Optional<Map.Entry<City,BigDecimal>>collect=sqPriceForCity.entrySet().stream().
-                filter(x->x.getKey()==city).findFirst();
+        BigDecimal defaultValue = BigDecimal.ZERO;
+        Optional<Map.Entry<City, BigDecimal>> collect = sqPriceForCity.entrySet().stream().
+                filter(x -> x.getKey() == city).findFirst();
 
 
-        return collect.isPresent()? collect.get().getValue():defaultValue;
+        return collect.isPresent() ? collect.get().getValue() : defaultValue;
     }
 }
