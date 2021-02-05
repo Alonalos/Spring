@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -30,5 +32,8 @@ public class ResponseWrapper {
         this.message = message;
         this.code=HttpStatus.OK.value();
         this.success=true;
+    }
+
+    public ResponseWrapper(boolean b, String parents_are_successfully_retrieved, int value, List<Parent> all) {
     }
 }
