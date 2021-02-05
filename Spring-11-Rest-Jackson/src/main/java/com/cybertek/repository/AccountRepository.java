@@ -11,7 +11,7 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
     // ------------------- DERIVED QUERIES ------------------- //
 
     //Write a derived query to list all accounts with a specific country or state
-    List<Account> findByCountryOOrState(String country, String state);
+    //List<Account> findByCountryOOrState(String country, String state);
 
     //Write a derived query to list all accounts with age lower than or equal to a specific value
     List<Account> findByAgeLessThanEqual(Integer age);
