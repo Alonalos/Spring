@@ -16,8 +16,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "account_details")
 @ToString
-@JsonIgnoreProperties(value={"state","postalCode"},ignoreUnknown = true)
-
+@JsonIgnoreProperties(value = {"state","postalCode"},ignoreUnknown = true)
 public class Account extends BaseEntity {
 
     private String name;
@@ -33,7 +32,7 @@ public class Account extends BaseEntity {
     private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "account")
-    @JsonBackReference //should include User information
+    @JsonBackReference
     private User user;
 
 

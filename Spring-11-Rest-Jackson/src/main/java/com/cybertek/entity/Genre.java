@@ -15,14 +15,13 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-@JsonIgnoreProperties(value={"hibernateLazyInitializer"}, ignoreUnknown = true)
-
+@JsonIgnoreProperties(value={"hibernate_Lazy_Initializer"},ignoreUnknown = true)
 public class Genre extends BaseEntity {
 
     private String name;
 
     @ManyToMany(mappedBy = "genreList")
-    @JsonIgnore //ignore this side but keep the one in Mocie class
+    @JsonIgnore
     private List<Movie> movieList = new ArrayList<>();
 
     public Genre(String name) {

@@ -30,9 +30,11 @@ public class Ticket extends BaseEntity {
     @JoinColumn(name = "user_account_id")
     private User user;
 
-    public Ticket(Integer seatNumber, Integer rowNumber, LocalDateTime localDateTime) {
+    public Ticket(Integer seatNumber, Integer rowNumber, LocalDateTime dateTime) {
         this.seatNumber = seatNumber;
         this.rowNumber = rowNumber;
-        this.dateTime = localDateTime;
+        this.dateTime = dateTime;
     }
+
+
 }

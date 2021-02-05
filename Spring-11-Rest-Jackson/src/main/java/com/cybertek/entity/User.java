@@ -14,18 +14,19 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Table(name = "user_account")
-@JsonIgnoreProperties(value={"hibernateLazyInitializer"}, ignoreUnknown = true) //add hibernateLazy.. whenever FetchType=LAZY (in the User field *see Ticket class)
+@JsonIgnoreProperties(value={"hibernateLazyInitializer"},ignoreUnknown = true)
 public class User extends BaseEntity {
 
     private String email;
-    @JsonProperty(access=JsonProperty.Access.WRITE_ONLY) //whenever we retrieve=get we hide this field, we only show it when set
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     private String username;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @OneToOne(fetch = FetchType.LAZY,cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "account_details_id")
-    @JsonManagedReference //should not show Account information
+    @JsonManagedReference
     private Account account;
 
     public User(String email, String password, String username) {
