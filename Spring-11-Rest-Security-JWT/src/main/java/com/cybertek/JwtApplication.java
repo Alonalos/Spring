@@ -14,8 +14,7 @@ public class JwtApplication {
 
     @Bean
     BCryptPasswordEncoder bCryptPasswordEncoder(){
-        return  new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder();
     }
-
 
 }

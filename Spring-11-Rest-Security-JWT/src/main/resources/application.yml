@@ -13,13 +13,13 @@ spring:
     initialization-mode: always
     data: classpath:data.sql
   jpa:
-    properies:
+    properties:
       hibernate:
-       dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
-       ddl-auto: create
+      ddl-auto: create
     show-sql: false
 security:
   jwt:
-    security-key: cybertek
+    secret-key: cybertek
 
