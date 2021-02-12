@@ -17,9 +17,9 @@ public class OpenApiConfig {
 
         SecurityScheme securitySchemeItem = new SecurityScheme();
         securitySchemeItem.setType(SecurityScheme.Type.HTTP);
-        securitySchemeItem.setScheme("bearer");
-        securitySchemeItem.setBearerFormat("JWT");
-        securitySchemeItem.setIn(SecurityScheme.In.HEADER);
+        securitySchemeItem.setScheme("bearer");//token
+        securitySchemeItem.setBearerFormat("JWT");//what is the format?
+        securitySchemeItem.setIn(SecurityScheme.In.HEADER);//where is the token?-in the header
         securitySchemeItem.setName("Authorization");
         io.swagger.v3.oas.models.info.Info infoVersion = new io.swagger.v3.oas.models.info.Info().title("Cybertek API").version("snapshot");
         SecurityRequirement securityItem = new SecurityRequirement().addList("bearer-jwt", Arrays.asList("read","write"));
