@@ -22,4 +22,8 @@ spring:
 security:
   jwt:
     secret-key: cybertek
+springdoc:
+   swagger-ui:
+     path: /swagger-ui.html
+
 
