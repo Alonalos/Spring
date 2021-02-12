@@ -17,18 +17,18 @@ import java.util.List;
 @RequestMapping("/api/v1/users")
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class UserController {
+
     @Autowired
     private UserService userService;
 
-
     @GetMapping("/read")
-    @PreAuthorize("hasAuthority('USER')")
-    //@PreAuthorize("hasAnyAuthority('USER','ADMIN')")
-    public ResponseEntity<ResponseWrapper>readAll(){
+    //@PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
+    public ResponseEntity<ResponseWrapper> readAll(){
 
-        List<User> users=userService.getAll();
+        List<User> users = userService.getAll();
 
         return ResponseEntity.ok(new ResponseWrapper("Done",users));
-    }
 
+    }
 }
