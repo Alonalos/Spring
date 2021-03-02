@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
+import org.junit.platform.engine.support.descriptor.FileSource;
 
 public class CalculatorParameterizedTest {
 
@@ -34,5 +35,20 @@ public class CalculatorParameterizedTest {
     static String[] stringProvider(){
         String arr[]={"Java","JS","TS"};
         return arr;
+    }
+    @ParameterizedTest
+    @CsvSource({
+            "10,20,30",
+            "20,30,50",
+            "30,40,30"
+    })
+    void testCase5(int num1,int num2,int result){
+        Assertions.assertEquals(result,Calculator.add(num1,num2));
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources="/sample-data.csv",numLinesToSkip = 1)
+    void testCase6(int num1,int num2,int result){
+        Assertions.assertEquals(result,Calculator.add(num1,num2));
     }
 }
